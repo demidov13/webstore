@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "webstore\\": "vendor/corestore",
+            "iframe\\": "vendor/iframe",
             "app\\": "app"
         }
     },
