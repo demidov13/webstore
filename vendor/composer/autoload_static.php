@@ -7,9 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInit69393f114f0c75af56ba59609aaa9b37
 {
     public static $prefixLengthsPsr4 = array (
-        'w' => 
+        'i' => 
         array (
-            'webstore\\' => 9,
+            'iframe\\' => 7,
         ),
         'a' => 
         array (
@@ -18,9 +18,9 @@ class ComposerStaticInit69393f114f0c75af56ba59609aaa9b37
     );
 
     public static $prefixDirsPsr4 = array (
-        'webstore\\' => 
+        'iframe\\' => 
         array (
-            0 => __DIR__ . '/..' . '/webstore',
+            0 => __DIR__ . '/..' . '/iframe/core',
         ),
         'app\\' => 
         array (
