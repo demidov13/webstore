@@ -3,7 +3,7 @@
 define("DEBUG", 1);                                 // Отвечает за режим работы (разработка или продакшн)
 define("LAYOUT", 'default');                        // Название шаблона сайта
 define("ROOT", dirname(__DIR__));                   // Определяет корневой каталог
-define("WWW", ROOT . '/puplic');                    // Определяет публичный каталог
+define("WWW", ROOT . '/public');                    // Определяет публичный каталог
 define("APP", ROOT . '/app');                       // Определяет каталог app, в котором расположены MVC
 define("CORE", ROOT . '/vendor/iframe/core');       // Определяет каталог с ядром CMS
 define("LIBS", ROOT . '/vendor/iframe/core/libs');  // Определяет каталог с библиотеками
