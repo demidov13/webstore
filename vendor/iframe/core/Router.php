@@ -5,8 +5,8 @@ namespace iframe;
 /**
  * Description of Router
  * Статичный Маршрутизатор
- * @param $routes - таблица всех маршрутов сайта
- * @param $route - текущий маршрут сайта
+ * @property $routes - таблица всех маршрутов сайта
+ * @property $route - текущий маршрут сайта
  * @method matchRoute Принимает url адрес и ищет соответствие в таблице маршрутов
  * @method dispatch Вызывает метод matchRoute и в зависимости от того, что он вернет (true/false),
  * возвращает соотвутствующий контроллер или ошибку 404.
