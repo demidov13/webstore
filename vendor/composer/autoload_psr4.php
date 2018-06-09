@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'iframe\\' => array($vendorDir . '/iframe/core'),
+    'iframe\\' => array($baseDir . '/iframe/core'),
     'app\\' => array($baseDir . '/app'),
 );

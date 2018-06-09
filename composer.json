@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "iframe\\": "vendor/iframe/core",
+            "iframe\\": "iframe/core",
             "app\\": "app"
         }
     },

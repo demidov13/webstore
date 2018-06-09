@@ -5,8 +5,8 @@ define("LAYOUT", 'default');                        // Название шабл
 define("ROOT", dirname(__DIR__));                   // Определяет корневой каталог
 define("WWW", ROOT . '/public');                    // Определяет публичный каталог
 define("APP", ROOT . '/app');                       // Определяет каталог app, в котором расположены MVC
-define("CORE", ROOT . '/vendor/iframe/core');       // Определяет каталог с ядром CMS
-define("LIBS", ROOT . '/vendor/iframe/core/libs');  // Определяет каталог с библиотеками
+define("CORE", ROOT . '/iframe/core');       // Определяет каталог с ядром CMS
+define("LIBS", ROOT . '/iframe/core/libs');  // Определяет каталог с библиотеками
 define("CACHE", ROOT . '/tmp/cache');               // Определяет каталог, созданный для кэша
 define("CONF", ROOT . '/config');                   // Определяет каталог с конфигурационными файлами
 
