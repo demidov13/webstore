@@ -7,6 +7,9 @@ namespace iframe\base;
  * Базовый контроллер ядра CMS.
  * @property $data свойство для хранения данных из БД и передачи их во вьюху.
  * @property $meta свойство для хранения метаданных.
+ * @method set Записывает какие-то данные в массив $data
+ * @method getView Создает объект класса View и вызывает его метод render.
+ * @method setMeta Заполняет метаданными массив $meta.
  */
 abstract class Controller
 {
@@ -17,7 +20,7 @@ abstract class Controller
     public $prefix;
     public $layout;
     public $data = [];
-    public $meta = [];
+    public $meta = ['title' => '', 'desc' => '', 'keywords' => ''];
 
     public function __construct($route){
         $this->route = $route;
