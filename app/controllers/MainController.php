@@ -10,19 +10,27 @@ use \RedBeanPHP\R as R;
  */
 
 use iframe\App;
+use iframe\Cache;
 
 class MainController extends AppController
 {
     public function indexAction(){
         $posts = R::findAll('test');
-//        $post = R::findOne('test', 'id = ?', [2]);
-
         
         $this->setMeta(App::$app->getProperty('shop_name'), 'Описание...', 'Ключевики...');
         $name = 'John';
         $age = 30;
         $names = ['Andrey', 'Jane',];
         $this->set(compact('name', 'age', 'names', 'posts'));
+        
+        $cache = Cache::instance();
+//        $cache->set('test', $names);
+//        $cache->delete('test');
+        $data = $cache->get('test');
+        if(!$data){
+            $cache->set('test', $names);
+        }
+        debug($data);
     }
     
 }

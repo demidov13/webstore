@@ -12,7 +12,7 @@ use iframe\Db;
  * @property array $errors Массив ошибок.
  * @property array $rules Массив для хранения правил валидации данных.
  */
-class Model
+abstract class Model
 {
     public $attributes = [];
     public $errors = [];
