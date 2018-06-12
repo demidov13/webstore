@@ -14,7 +14,18 @@
         <h1>Шаблон DEFAULT</h1>
         
         <?=$content;?>
-    
+        
+        <?php
+        //  Вывод всех запрос к БД с помощью RedBeanPHP
+            use \RedBeanPHP\R as R;
+        
+            $logs = R::getDatabaseAdapter()
+                    ->getDatabase()
+                    ->getLogger();
+
+            debug( $logs->grep( 'SELECT' ) );
+?>
+        
     </main>
     <footer></footer>
 </body>
