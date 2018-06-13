@@ -1,7 +1,7 @@
 <?php
 
 define("DEBUG", 1);                                 // Отвечает за режим работы (разработка или продакшн)
-define("LAYOUT", 'default');                        // Название шаблона сайта
+define("LAYOUT", 'funko');                        // Название шаблона сайта
 define("ROOT", dirname(__DIR__));                   // Определяет корневой каталог
 define("WWW", ROOT . '/public');                    // Определяет публичный каталог
 define("APP", ROOT . '/app');                       // Определяет каталог app, в котором расположены MVC
