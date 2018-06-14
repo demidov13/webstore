@@ -20,24 +20,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="top-header-main">
 				<div class="col-md-6 top-header-left">
-					<div class="drop">
-						<div class="box">
-							<select tabindex="4" class="dropdown drop">
-								<option value="" class="label">Dollar :</option>
-								<option value="1">Dollar</option>
-								<option value="2">Euro</option>
-							</select>
-						</div>
-						<div class="box1">
-							<select tabindex="4" class="dropdown">
-								<option value="" class="label">English :</option>
-								<option value="1">English</option>
-								<option value="2">French</option>
-								<option value="3">German</option>
-							</select>
-						</div>
-						<div class="clearfix"></div>
-					</div>
+			
 				</div>
 				<div class="col-md-6 top-header-left">
 					<div class="cart box_1">
@@ -282,10 +265,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--footer-end-->	
 <script src="/js/jquery-1.11.0.min.js"></script>
     <!--script menu-->
-<script src="/js/simpleCart.min.js"> </script>
+<script src="/js/simpleCart.min.js"></script>
 <script type="text/javascript" src="/js/memenu.js"></script>
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>	
 <!--dropdown-->
-<script src="/js/jquery.easydropdown.js"></script>		
+<script src="/js/jquery.easydropdown.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

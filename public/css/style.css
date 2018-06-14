@@ -338,7 +338,7 @@ span.simpleCart_total {
 	list-style: none;
 	overflow: hidden;
 	padding:0;
-	background:#000;
+	background:#333333;
 }
 .dropdown.scrollable.open ul{
 	overflow-y: auto;
@@ -554,9 +554,6 @@ figure.effect-bubba:hover p,figure.effect-bubba:hover h2 {
 }
 .product-one:nth-child(2){
 	margin-top:30px;
-}
-.product-one > .product-left {
-    margin-bottom: 40px;
 }
 img.zoom-img {
     -webkit-transform: scale(1, 1);
@@ -2961,3 +2958,8 @@ ul.tag-men {
 }
 }
 /*--media-quaries-end-here--*/
+
+/*--my style--*/
+.product-one > .product-left {
+    margin-bottom: 30px;
+}
