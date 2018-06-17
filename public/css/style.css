@@ -218,7 +218,7 @@ span.simpleCart_total {
 }
 .dropdown:hover,
 .dropdown.focus{
-	--background:#F7F7F7;--
+	background:#F7F7F7;
 }
 /* CARAT */
 .dropdown .carat,
@@ -1573,7 +1573,7 @@ a.add-cart {
     padding: 0.4em 0.8em;
     font-size: 1.15em;
     text-transform: uppercase;
-    margin-top: 2em;
+    margin-top: 1em;
     display: inline-block;
 }
 a.add-cart:hover {
@@ -2962,4 +2962,7 @@ ul.tag-men {
 /*--my style--*/
 .product-one > .product-left {
     margin-bottom: 30px;
+}
+div.quantity {
+    margin-top: 10px;
 }

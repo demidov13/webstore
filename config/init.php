@@ -18,7 +18,7 @@ $app_path = preg_replace('#[^/]+$#', '', $app_path);
 // Отрезаем public/, получаем URL главной страницы http://webstore
 $app_path = preg_replace('/public/', '', $app_path);
 
-define("PATH", '$app_path');                        // Определяет URL главной страницы
+define("PATH", $app_path);                        // Определяет URL главной страницы
 define("ADMIN", PATH . '/admin');                   // Определяет URL панели администратора
 
 // Подключаем автозагрузчик классов

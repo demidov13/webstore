@@ -35,7 +35,7 @@
                                     <div class="product-bottom">
                                         <div class="div-title"><a href="product/<?=$hit->alias;?>" class="mask"><h3><?=$hit->title;?></h3></a></div>
                                         <p>Купить сейчас</p>
-                                        <h4><a class="add-to-cart-link" href="cart/add?id=<?=$hit->id;?>"><i></i></a>
+                                        <h4><a class="add-to-cart-link" href="cart/add?id=<?=$hit->id;?>" data-id="<?=$hit->id;?>"><i></i></a>
                                             <span class="item_price"><?=$hit->price;?> грн.</span> 
                                                 <?php if($hit->old_price): ?>
                                                     <small><del><?=$hit->old_price;?></del></small>

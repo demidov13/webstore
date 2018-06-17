@@ -7,11 +7,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
+<base href="/">
 <?=$this->getMeta();?>
-<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="/megamenu/css/style.css">
-<link rel="stylesheet" href="/megamenu/css/ionicons.min.css">
-<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="megamenu/css/style.css">
+<link rel="stylesheet" href="megamenu/css/ionicons.min.css">
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
 </head>
@@ -47,7 +49,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="menu-container">
                     <div class="menu">
                         <?php new \app\widgets\menu\Menu([
-                            'tpl' => WWW . '/menu/menu.php'                      
+                            'tpl' => WWW . '/menu/menu.php'
                         ]); ?>
                     </div>
                 </div>
@@ -63,15 +65,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 	</div>
-	<!--bottom-header-->
+	<!--end bottom-header-->
 		<!--start-logo-->
-		<div class="logo">
-		</div>
+            <a href="<?=PATH;?>"><div class="logo"></div></a>	
 		<!--end-logo-->
 
         <?=$content;?>
         
-	<!--information-starts-->
+	<!--footer-top-start-->
 	<div class="information">
 		<div class="container">
 			<div class="infor-top">
@@ -115,8 +116,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 	</div>
-	<!--information-end-->
-	<!--footer-starts-->
+	<!--footer-top-end-->
+	<!--footer-bottom-start-->
 	<div class="footer">
 		<div class="container">
 			<div class="footer-top">
@@ -133,15 +134,45 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 	</div>
-	<!--footer-end-->	
-<script src="/js/jquery-1.11.0.min.js"></script>
+	<!--footer-bottom-end-->	
+<script src="js/jquery-1.11.0.min.js"></script>
     <!--script menu-->
-<script src="/js/simpleCart.min.js"></script>
-<script type="text/javascript" src="/js/memenu.js"></script>
-<script>$(document).ready(function(){$(".memenu").memenu();});</script>	
+<script src="js/simpleCart.min.js"></script>
 <!--dropdown-->
-<script src="/js/jquery.easydropdown.js"></script>
-<script src="/megamenu/js/megamenu.js"></script>
-<script src="/js/main.js"></script>
+<script src="js/jquery.easydropdown.js"></script>
+<script type="text/javascript">
+    $(function() {
+
+        var menu_ul = $('.menu_drop > li > ul'),
+            menu_a  = $('.menu_drop > li > a');
+
+        menu_ul.hide();
+
+        menu_a.click(function(e) {
+            e.preventDefault();
+            if(!$(this).hasClass('active')) {
+                menu_a.removeClass('active');
+                menu_ul.filter(':visible').slideUp('normal');
+                $(this).addClass('active').next().stop(true,true).slideDown('normal');
+            } else {
+                $(this).removeClass('active');
+                $(this).next().stop(true,true).slideUp('normal');
+            }
+        });
+
+    });
+</script>
+<script src="megamenu/js/megamenu.js"></script>
+<script src="js/imagezoom.js"></script>
+<script>
+    // Can also be used with $(document).ready()
+    $(window).load(function() {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: "thumbnails"
+        });
+    });
+</script>
+<script src="js/main.js"></script>
 </body>
 </html>
