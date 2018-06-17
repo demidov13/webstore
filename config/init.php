@@ -16,7 +16,7 @@ $app_path = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}";
 // Отрезаем index.php, получаем http://webstore/public/
 $app_path = preg_replace('#[^/]+$#', '', $app_path);
 // Отрезаем public/, получаем URL главной страницы http://webstore
-$app_path = preg_replace('/public/', '', $app_path);
+$app_path = str_replace('/public/', '', $app_path);
 
 define("PATH", $app_path);                        // Определяет URL главной страницы
 define("ADMIN", PATH . '/admin');                   // Определяет URL панели администратора

@@ -1,17 +1,16 @@
 <!--Хлебные крошки-->
-<div class="breadcrumbs" style="margin-top: 1em">
+<div class="breadcrumbs" style="margin-top: 3em">
     <div class="container">
         <div class="breadcrumbs-main">
             <ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li class="active">Single</li>
+                <?=$breadcrumbs;?>
             </ol>
         </div>
     </div>
 </div>
 <!--Хлебные крошки конец-->
 <!--Карточка товара-->
-<div class="single contact">
+<div class="single contact" style="padding: 3em 0px;">
     <div class="container">
         <div class="single-main">
             <div class="col-md-9 single-main-left">
