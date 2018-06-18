@@ -10,6 +10,9 @@ namespace iframe\base;
  * @method set Записывает какие-то данные в массив $data
  * @method getView Создает объект класса View и вызывает его метод render.
  * @method setMeta Заполняет метаданными массив $meta.
+ * @method isAjax метод из yii2, возвращает true, если запрос пришел асинхронно
+ * через ajax или false в обратном случае.
+ * @method loadView возвращает html шаблон (модалку) после выполнения ajax запроса.
  */
 abstract class Controller
 {
@@ -43,5 +46,15 @@ abstract class Controller
         $this->meta['title'] = $title;
         $this->meta['desc'] = $desc;
         $this->meta['keywords'] = $keywords;
+    }
+    
+    public function isAjax() {
+        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
+    }
+
+    public function loadView($view, $vars = []){
+        extract($vars);
+        require APP . "/views/{$this->prefix}{$this->controller}/{$view}.php";
+        die;
     }
 }

@@ -69,7 +69,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!--start-logo-->
             <a href="<?=PATH;?>"><div class="logo"></div></a>	
 		<!--end-logo-->
-
+       
         <?=$content;?>
         
 	<!--footer-top-start-->
@@ -135,9 +135,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!--footer-bottom-end-->	
+<script> var path = '<?=PATH;?>'; </script>
 <script src="js/jquery-1.11.0.min.js"></script>
     <!--script menu-->
-<script src="js/simpleCart.min.js"></script>
+<!--<script src="js/simpleCart.min.js"></script>-->
 <!--dropdown-->
 <script src="js/jquery.easydropdown.js"></script>
 <script type="text/javascript">
@@ -164,15 +165,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </script>
 <script src="megamenu/js/megamenu.js"></script>
 <script src="js/imagezoom.js"></script>
-<script>
-    // Can also be used with $(document).ready()
-    $(window).load(function() {
-        $('.flexslider').flexslider({
-            animation: "slide",
-            controlNav: "thumbnails"
-        });
-    });
-</script>
 <script src="js/main.js"></script>
 </body>
 </html>

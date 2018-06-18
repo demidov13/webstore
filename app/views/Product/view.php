@@ -24,36 +24,28 @@
                     <div class="col-md-7 single-top-right">
                         <div class="single-para simpleCart_shelfItem">
                             <h2><?=$product->title;?></h2>
-                            <h5 class="item_price"><?=$product->price;?> грн.</h5>
+                            <h5 class="item_price" id="base-price" data-base="<?=$product->price;?>"><?=$product->price;?> грн.</h5>
                             <?php if($product->old_price): ?>
-                                <del><?=$product->old_price;?> грн.</del>
+                            <del id="old-price" data-old="<?=$product->old_price;?>"><?=$product->old_price;?> грн.</del>
                             <?php endif; ?>
                                 <p style="font-family: Tahoma, Geneva, sans-serif"><?=$product->content;?></p>
-                            <div class="available">
-                                <ul>
-                                    <li>Color
-                                        <select>
-                                            <option>Silver</option>
-                                            <option>Black</option>
-                                            <option>Dark Black</option>
-                                            <option>Red</option>
-                                        </select></li>
-                                    <li class="size-in">Size<select>
-                                            <option>Large</option>
-                                            <option>Medium</option>
-                                            <option>small</option>
-                                            <option>Large</option>
-                                            <option>small</option>
-                                        </select></li>
-                                    <div class="clearfix"> </div>
-                                </ul>
-                            </div>
-
-                              <span style="font-family: Tahoma, Geneva, sans-serif; margin-right: 1em">Категория:</span>
-                                    <span><a href="category/<?=$category[$product->category_id]['alias'];?>" style="font-family: Palatino Linotype; text-decoration: none"><?=$category[$product->category_id]['title'];?></a></span>
-
+                            <?php if($mods): ?>
+                                <div class="available">                              
+                                    <ul>
+                                        <li style="font-family: Tahoma, Geneva, sans-serif">
+                                            <p>Производитель:</p>
+                                            <select style="margin-left: 0">                                            
+                                                <?php foreach($mods as $mod): ?>
+                                                <option data-title="<?=$mod->title;?>" data-price="<?=$mod->price_factor;?>" value="<?=$mod->id;?>"><?=$mod->title;?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </li>
+                                        <div class="clearfix"> </div>
+                                    </ul>
+                                </div>
+                            <?php endif;?>
                                 <div class="quantity" style="margin-top: 10px">
-                                    <span style="font-family: Tahoma, Geneva, sans-serif; margin-right: 1em">Количество</span><input type="number" size="4" value="1" name="quantity" min="1" step="1">
+                                    <span style="font-family: Tahoma, Geneva, sans-serif; margin-right: 0.5em; margin-top: 1em">Количество:</span><input type="number" size="4" value="1" name="quantity" min="1" step="1">
                             </div>
                                 <a id="productAdd" data-id="<?=$product->id;?>" href="cart/add?id=<?=$product->id;?>" class="add-cart item_add add-to-cart-link" style="margin-top: 1em; font-family: Tahoma, Geneva, sans-serif">Добавить в корзину</a>
 
