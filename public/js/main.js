@@ -50,6 +50,20 @@ $('#cart .modal-body').on('click', '.del-item', function(){
     });
 });
 
+// Удаление из корзины всех товваров
+function clearCart() {
+    $.ajax({
+        url: '/cart/clear',
+        type: 'GET',
+        success: function(res){
+            showCart(res);
+        },
+        error: function(){
+            alert('Ошибка! Попробуйте позже');
+        }
+    });
+}
+
 // Вывод корзины на экран showCart и getCart
 function showCart(cart){
     if($.trim(cart) == '<h3>Корзина пуста</h3>'){
