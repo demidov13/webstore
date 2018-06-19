@@ -15,7 +15,7 @@ class Cart extends AppModel
         
         if($mod){
             $ID = "{$product->id}-{$mod->id}";
-            $title = "{$product->title} ({$mod->title})";
+            $title = "{$product->title} {$mod->title}";
             $price = $product->price * $mod->price_factor;
         }else{
             $ID = $product->id;
@@ -35,6 +35,14 @@ class Cart extends AppModel
         }
         $_SESSION['cart.qty'] = isset($_SESSION['cart.qty']) ? $_SESSION['cart.qty'] + $qty : $qty;
         $_SESSION['cart.sum'] = isset($_SESSION['cart.sum']) ? $_SESSION['cart.sum'] + $qty * $price : $qty * $price;
+    }
+    
+    public function deleteItem($id){
+        $qtyMinus = $_SESSION['cart'][$id]['qty'];
+        $sumMinus = $_SESSION['cart'][$id]['qty'] * $_SESSION['cart'][$id]['price'];
+        $_SESSION['cart.qty'] -= $qtyMinus;
+        $_SESSION['cart.sum'] -= $sumMinus;
+        unset($_SESSION['cart'][$id]);
     }
 }
 
