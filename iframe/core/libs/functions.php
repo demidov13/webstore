@@ -24,3 +24,8 @@ function redirect($http = false){
     header("Location: $redirect");
     exit;
 }
+
+// ENT_QUOTES для преобразования одинарных кавычек
+function h($str){
+    return htmlspecialchars($str, ENT_QUOTES);
+}

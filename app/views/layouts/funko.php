@@ -14,6 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="megamenu/css/ionicons.min.css">
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="css/mystyle.css" rel="stylesheet" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
 </head>
@@ -23,7 +24,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="top-header-main">
 				<div class="col-md-6 top-header-left">
-			
 				</div>
 				<div class="col-md-6 top-header-left">
 					<div class="cart box_1">
@@ -37,13 +37,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <?php endif; ?>
                         </div>
                     </a>
-                        
-<!--						<a href="checkout.html">
-							 <div class="total">
-								<span class="simpleCart_total"></span></div>
-								<img src="images/cart-1.png" alt="" />
-						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>-->
 						<div class="clearfix"> </div>
 					</div>
 				</div>
@@ -68,8 +61,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<div class="col-md-3 header-right"> 
 				<div class="search-bar">
-					<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-					<input type="submit" value="">
+                    <form action="search" method="get" autocomplete="off">
+                        <input type="text" class="typeahead" id="typeahead" name="s" placeholder="Поиск">
+                        <input type="submit" value="">
+                    </form>
 				</div>
 			</div>
 			<div class="clearfix"> </div>
