@@ -41,6 +41,11 @@
                     </div>
                     <?php endforeach; ?>
                     <div class="clearfix"></div>
+                    <div class="text-center">
+                            <?php if($pagination->countPages > 1): ?>
+                                <?=$pagination;?>
+                            <?php endif; ?>
+                        </div>
                 </div>
                 <?php else: ?>
                     <h3>В этой категории нет доступных товаров</h3>

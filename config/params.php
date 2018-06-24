@@ -8,7 +8,7 @@
 
 return [
     'admin_email' => 'vitaliydemidov13@gmail.com',
-    'shop_name' => 'Магазин webstore',
+    'shop_name' => 'webstore',
     'pagination' => 6,
     'smtp_login' => '',
     'smtp_password' => '',
