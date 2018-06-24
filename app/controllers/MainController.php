@@ -2,8 +2,6 @@
 
 namespace app\controllers;
 
-use \RedBeanPHP\R as R;
-
 /**
  * Description of MainController
  * Основной контроллер сайта
@@ -12,6 +10,7 @@ use \RedBeanPHP\R as R;
 
 use iframe\App;
 use iframe\Cache;
+use \RedBeanPHP\R as R;
 
 class MainController extends AppController
 {

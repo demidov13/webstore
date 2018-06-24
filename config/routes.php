@@ -10,6 +10,8 @@ use iframe\Router;
 
 // Правило для страницы продукта
 Router::add('^product/(?P<alias>[a-z0-9-]+)/?$', ['controller' => 'Product', 'action' => 'view']);
+// Правило для категорий
+Router::add('^category/(?P<alias>[a-z0-9-]+)/?$', ['controller' => 'Category', 'action' => 'view']);
 
 // Правила по умлочанию для панели управления
 Router::add('^admin$', ['controller' => 'Main', 'action' => 'index', 'prefix' => 'admin']);

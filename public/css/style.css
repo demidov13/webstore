@@ -504,6 +504,8 @@ figure.effect-bubba:hover p,figure.effect-bubba:hover h2 {
 .product-main {
     padding: 1em 0px 2.7em 0px;
     border: 1px solid rgb(174, 225, 235);
+    box-sizing: border-box;
+    min-height: 436px;
 }
 .product {
     padding: 3em 0px 6em 0px;
@@ -769,9 +771,6 @@ a.mask {
 }
 /*--footer-end--*/
 /*--product-page-starts--*/
-.prdt{
-	padding:6em 0px;
-}
 .w_sidebar{
 	border: 1px solid #EBEBEB;
 }
@@ -1188,6 +1187,7 @@ a.mask {
 /*--product-page-end--*/
 /*--breadcrumbs-starts--*/
 .breadcrumbs-main {
+    margin-top: 1em;
     border: 1px solid #D6D6D6;
 }
 .breadcrumb {
@@ -2066,6 +2066,7 @@ figure.effect-bubba p {
 }
 .product-main {
     padding: 1em 0px 1.8em 0px;
+    min-height: 230px;
 }
 .srch span {
     font-size: 13px;
@@ -2952,7 +2953,7 @@ ul.tag-men {
 
 /*--my style--*/
 .product-one > .product-left {
-    margin-bottom: 30px;
+    margin-bottom: 1.8em;
 }
 div.quantity {
     margin-top: 10px;
