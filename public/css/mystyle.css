@@ -103,3 +103,22 @@ div.menu li.menu-dropdown-icon {
 .prdt{
 	padding: 2em 0px;
 }
+.drop > .btn-group > a{
+	color: #fff;
+	cursor: pointer;
+	position: relative;
+	top: -2px;
+}
+form .has-success .form-control{
+    border-color: green;
+}
+form .has-error .form-control{
+    border-color: red;
+}
+.has-error, .has-success{
+    position: relative;
+}
+.form-control-feedback {
+    right: 10px;
+    top: 25px;
+}

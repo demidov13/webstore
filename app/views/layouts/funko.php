@@ -24,6 +24,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="top-header-main">
 				<div class="col-md-6 top-header-left">
+                    <div class="drop">
+                        <div class="btn-group">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Личный кабинет <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <?php if(!empty($_SESSION['user'])): ?>
+                                    <li><a href="#">Добро пожаловать, <?=$_SESSION['user']['name'];?></a></li>
+                                    <li><a href="user/logout">Выход</a></li>
+                                <?php else: ?>
+                                    <li><a href="user/login">Вход</a></li>
+                                    <li><a href="user/signup">Регистрация</a></li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
 				</div>
 				<div class="col-md-6 top-header-left">
 					<div class="cart box_1">
@@ -73,11 +88,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!--end bottom-header-->
 		<!--start-logo-->
-            <a href="<?=PATH;?>"><div class="logo"></div></a>	
+    <a href="<?=PATH;?>"><div class="logo"></div></a>
 		<!--end-logo-->
-       
-        <?=$content;?>
-        
+
+    <?=$content;?>
+
 	<!--footer-top-start-->
 	<div class="information">
 		<div class="container">
@@ -164,6 +179,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script> var path = '<?=PATH;?>'; </script>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/validator.js"></script>
 <script src="js/typeahead.bundle.js"></script>
 <script src="js/jquery.easydropdown.js"></script>
 <script type="text/javascript">
