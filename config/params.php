@@ -7,9 +7,12 @@
  */
 
 return [
-    'admin_email' => 'vitaliydemidov13@gmail.com',
+    'admin_email' => 'itdemidov@ukr.net',
     'shop_name' => 'webstore',
     'pagination' => 6,
-    'smtp_login' => '',
-    'smtp_password' => '',
+    'smtp_host' => 'smtp.ukr.net',
+    'smtp_port' => '2525',
+    'smtp_protocol' => 'ssl',
+    'smtp_login' => 'testwebstore@ukr.net',
+    'smtp_password' => 'webstore13',
 ];

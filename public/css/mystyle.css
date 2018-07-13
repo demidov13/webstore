@@ -122,3 +122,6 @@ form .has-error .form-control{
     right: 10px;
     top: 25px;
 }
+.cart table img {
+	height: 50px;
+}
