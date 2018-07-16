@@ -5,6 +5,9 @@
         <div class="about"> 
             <div class="container">
                 <div class="about-top grid-1">
+                    <div class="col-md-12">
+                        <p class="main-title-about">Виниловые фигурки любимых героев</p>
+                    </div>
                     <?php foreach ($universes as $universe): ?>
                         <div class="col-md-4 about-left">
                             <figure class="effect-bubba">
@@ -25,9 +28,10 @@
 	<!--product-starts-->
     <?php if($hits): ?>
         <div class="product"> 
-            <div class="container">
+            <div class="container hits-container">
                 <div class="product-top">
                     <div class="product-one">
+                        <p class="main-title-products">Популярные товары</p>
                         <?php foreach ($hits as $hit): ?>
                             <div class="col-md-3 product-left">
                                 <div class="product-main simpleCart_shelfItem">

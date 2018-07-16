@@ -45,92 +45,47 @@
                             <?php if($pagination->countPages > 1): ?>
                                 <?=$pagination;?>
                             <?php endif; ?>
-                        </div>
+                    </div>
                 </div>
                 <?php else: ?>
                     <h3>В этой категории нет доступных товаров</h3>
                 <?php endif; ?>
             </div>
             <!--Вывод продуктов конец-->
+            <?php if(!empty($products)): ?>
             <div class="col-md-3 prdt-right">
                 <div class="w_sidebar">
                     <section  class="sky-form">
-                        <h4>Catogories</h4>
+                        <h4>Показать только</h4>
                         <div class="row1 scroll-pane">
-                            <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Accessories</label>
-                            </div>
-                            <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Women Watches</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Kids Watches</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Men Watches</label>
+                            <div class="col col-4 filters">
+                                <label class="checkbox"><input value="hit" type="checkbox" name="checkbox" <?php if(!empty($filters) && in_array('hit', $filters)) echo 'checked'; ?>><i></i>Хиты</label>
+                                <label class="checkbox"><input value="publish" type="checkbox" name="checkbox" <?php if(!empty($filters) && in_array('publish', $filters)) echo 'checked'; ?>><i></i>Товары в наличии</label>
+                                <label class="checkbox"><input value="old_price" type="checkbox" name="checkbox" <?php if(!empty($filters) && in_array('old_price', $filters)) echo 'checked'; ?>><i></i>Товары со скидкой</label>
                             </div>
                         </div>
                     </section>
                     <section  class="sky-form">
-                        <h4>Brand</h4>
-                        <div class="row1 row2 scroll-pane">
+                        <h4>Сортировать по цене</h4>
+                        <div class="row1 scroll-pane">
                             <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>kurtas</label>
-                            </div>
-                            <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Sonata</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Titan</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Casio</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Omax</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>shree</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Fastrack</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Sports</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Fossil</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Maxima</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Yepme</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Citizen</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Diesel</label>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="sky-form">
-                        <h4>Colour</h4>
-                        <ul class="w_nav2">
-                            <li><a class="color1" href="#"></a></li>
-                            <li><a class="color2" href="#"></a></li>
-                            <li><a class="color3" href="#"></a></li>
-                            <li><a class="color4" href="#"></a></li>
-                            <li><a class="color5" href="#"></a></li>
-                            <li><a class="color6" href="#"></a></li>
-                            <li><a class="color7" href="#"></a></li>
-                            <li><a class="color8" href="#"></a></li>
-                            <li><a class="color9" href="#"></a></li>
-                            <li><a class="color10" href="#"></a></li>
-                            <li><a class="color12" href="#"></a></li>
-                            <li><a class="color13" href="#"></a></li>
-                            <li><a class="color14" href="#"></a></li>
-                            <li><a class="color15" href="#"></a></li>
-                            <li><a class="color5" href="#"></a></li>
-                            <li><a class="color6" href="#"></a></li>
-                            <li><a class="color7" href="#"></a></li>
-                            <li><a class="color8" href="#"></a></li>
-                            <li><a class="color9" href="#"></a></li>
-                            <li><a class="color10" href="#"></a></li>
-                        </ul>
-                    </section>
-                    <section class="sky-form">
-                        <h4>discount</h4>
-                        <div class="row1 row2 scroll-pane">
-                            <div class="col col-4">
-                                <label class="radio"><input type="radio" name="radio" checked=""><i></i>60 % and above</label>
-                                <label class="radio"><input type="radio" name="radio"><i></i>50 % and above</label>
-                                <label class="radio"><input type="radio" name="radio"><i></i>40 % and above</label>
-                            </div>
-                            <div class="col col-4">
-                                <label class="radio"><input type="radio" name="radio"><i></i>30 % and above</label>
-                                <label class="radio"><input type="radio" name="radio"><i></i>20 % and above</label>
-                                <label class="radio"><input type="radio" name="radio"><i></i>10 % and above</label>
+                                <div class="input-group" style="padding: 1em">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input name="price1" type="number" class="form-control" placeholder="От" <?php if(!empty($_GET['price1'])): ?> value="<?=$_GET['price1'];?>"<?php endif;?>>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input name="price2" type="number" class="form-control" placeholder="До" <?php if(!empty($_GET['price2'])): ?> value="<?=$_GET['price2'];?>"<?php endif;?>>
+                                        </div>
+                                    </div>
+                                    <button style="margin-top: 1em" type="button" class="btn btn-default priceSubmit">Применить</button>
+                                </div>
                             </div>
                         </div>
                     </section>
                 </div>
             </div>
+            <?php endif;?>
             <div class="clearfix"></div>
         </div>
     </div>

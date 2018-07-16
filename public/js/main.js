@@ -1,3 +1,80 @@
+/* Фильтры */
+
+$('body').on('click', '.priceSubmit', function() {
+    var price1, price2;
+    if($('input[name = price1]').val()) {
+        price1 = $('input[name = price1]').val();
+    } else {
+        price1 = 1;
+    }
+    if($('input[name = price2]').val()) {
+        price2 = $('input[name = price2]').val();
+    } else {
+        price2 = 999999;
+    }
+    $.ajax({
+        url: location.href,
+        data: {price1: price1, price2: price2},
+        type: 'GET',
+        beforeSend: function(){
+            $('.preloader').fadeIn(300, function(){
+                $('.product-one').hide();
+            });
+        },
+        success: function(res){
+            $('.preloader').delay(500).fadeOut('slow', function(){
+                $('.product-one').html(res).fadeIn();
+                var urlPrice = location.search.replace(/price1(.+?)(&|$)/g, '');
+                urlPrice = urlPrice.replace(/price2(.+?)(&|$)/g, '');
+                var newURLprice = location.pathname + urlPrice + (location.search ? "&" : "?") + "price1=" + price1 + "&" + "price2=" + price2;
+                newURLprice = newURLprice.replace('&&', '&');
+                newURLprice = newURLprice.replace('?&', '?');
+                history.pushState({}, '', newURLprice);
+            });
+        },
+        error: function () {
+            alert('Ошибка!');
+        }
+    });
+});
+
+$('body').on('change', '.filters input', function(){
+    var checked = $('.filters input:checked'),
+        data = '';
+    checked.each(function () {
+        data += this.value + ',';
+    });
+    if(data){
+        $.ajax({
+            url: location.href,
+            data: {filter: data},
+            type: 'GET',
+            beforeSend: function(){
+                $('.preloader').fadeIn(300, function(){
+                    $('.product-one').hide();
+                });
+            },
+            success: function(res){
+                $('.preloader').delay(500).fadeOut('slow', function(){
+                    $('.product-one').html(res).fadeIn();
+                    var url = location.search.replace(/filter(.+?)(&|$)/g, '');
+                    var newURL = location.pathname + url + (location.search ? "&" : "?") + "filter=" + data;
+                    newURL = newURL.replace('&&', '&');
+                    newURL = newURL.replace('?&', '?');
+                    history.pushState({}, '', newURL);
+                });
+            },
+            error: function () {
+                alert('Ошибка!');
+            }
+        });
+    }else{
+        window.location = location.pathname;
+    }
+});
+
+/* Фильтры конец */
+
 // Изменение цены в карточке товара при смене производителя.
 $('.available select').on('change', function(){
     var modId = $(this).val(),

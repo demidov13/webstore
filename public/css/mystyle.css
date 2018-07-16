@@ -125,3 +125,46 @@ form .has-error .form-control{
 .cart table img {
 	height: 50px;
 }
+.preloader{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:9999;
+	background-color:#fefefe;
+	opacity: .7;
+	display: none;
+}
+.preloader img{
+	position:relative;
+	left:50%;
+	top:50vh;
+	margin:-100px 0 0 -100px;
+}
+.main-title-about {
+	font-family: 'Lora-Regular';
+	font-size: 3rem;
+	text-transform: uppercase;
+	text-align: center;
+}
+.main-title-products {
+	font-family: 'Lora-Regular';
+	font-size: 3rem;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 1em;
+}
+.product {
+	padding: 1em 0px 1em 0px;
+}
+.div-account {
+	font-family: 'Lora-Regular';
+	position: relative;
+	bottom: 0.2em;
+}
+.div-cart {
+	font-family: 'Lora-Regular';
+	position: relative;
+	top: 0.4em;
+}

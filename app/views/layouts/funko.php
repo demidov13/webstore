@@ -25,7 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="top-header-main">
 				<div class="col-md-6 top-header-left">
                     <div class="drop">
-                        <div class="btn-group">
+                        <div class="btn-group div-account">
                             <a class="dropdown-toggle" data-toggle="dropdown">Личный кабинет <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <?php if(!empty($_SESSION['user'])): ?>
@@ -41,7 +41,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
 				</div>
 				<div class="col-md-6 top-header-left">
-					<div class="cart box_1">
+					<div class="cart box_1 div-cart">
                         <a href="cart/show" onclick="getCart(); return false;">
                         <div class="total">
                             <img src="images/cart-1.png" alt="" />
@@ -143,10 +143,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="footer-top">
 				<div class="col-md-6 footer-left">
-					<form>
-						<input type="text" value="Enter Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Email';}">
-						<input type="submit" value="Subscribe">
-					</form>
 				</div>
 				<div class="col-md-6 footer-right">					
 					<p>© 2018 All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
@@ -176,6 +172,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 </div>
     <!-- Modal end-->
+    <div class="preloader"><img src="images/ring.svg" alt=""></div>
 <script> var path = '<?=PATH;?>'; </script>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
