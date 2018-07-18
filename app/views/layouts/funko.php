@@ -8,6 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <base href="/">
+<link rel="shortcut icon" href="images/f2.png" type="image/png" />
 <?=$this->getMeta();?>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="megamenu/css/style.css">

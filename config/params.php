@@ -8,7 +8,7 @@
 
 return [
     'admin_email' => 'itdemidov@ukr.net',
-    'shop_name' => 'webstore',
+    'shop_name' => 'Funko Pop',
     'pagination' => 6,
     'smtp_host' => 'smtp.ukr.net',
     'smtp_port' => '2525',

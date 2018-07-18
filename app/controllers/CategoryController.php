@@ -56,8 +56,6 @@ class CategoryController extends AppController
             }
         }
 
-//        $price1 = '';
-//        $price2 = '';
         if(!empty($_GET['price1']) && !empty($_GET['price2'])) {
             $price1 = (int)$_GET['price1'];
             $price2 = (int)$_GET['price2'];
@@ -72,7 +70,7 @@ class CategoryController extends AppController
         $start = $pagination->getStart();
         
         // Поиск продуктов
-        $products = R::find('product', "category_id IN ($ids) $sql_part LIMIT $start, $perpage");
+        $products = R::find('product', "category_id IN ($ids) $sql_part ORDER BY publish DESC LIMIT $start, $perpage");
 
         // Вывод отфильтрованных продуктов
         if($this->isAjax()){

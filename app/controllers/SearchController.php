@@ -17,7 +17,7 @@ class SearchController extends AppController
         if($this->isAjax()){
             $query = !empty(trim($_GET['query'])) ? trim($_GET['query']) : null;
             if($query){
-                $products = R::getAll('SELECT id, title FROM product WHERE title LIKE ? OR brand LIKE ? LIMIT 11', ["%{$query}%", "%{$query}%"]);
+                $products = R::getAll('SELECT id, title FROM product WHERE (title LIKE ? OR brand LIKE ?) AND publish = 1 LIMIT 11', ["%{$query}%", "%{$query}%"]);
                 echo json_encode($products);
             }
         }

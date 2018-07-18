@@ -44,11 +44,14 @@
                                     </ul>
                                 </div>
                             <?php endif;?>
+                            <?php if($product->publish == 1): ?>
                                 <div class="quantity" style="margin-top: 10px">
                                     <span style="font-family: Tahoma, Geneva, sans-serif; margin-right: 0.5em; margin-top: 1em">Количество:</span><input type="number" size="4" value="1" name="quantity" min="1" step="1">
-                            </div>
+                                </div>
                                 <a id="productAdd" data-id="<?=$product->id;?>" href="cart/add?id=<?=$product->id;?>" class="add-cart item_add add-to-cart-link" style="margin-top: 1em; font-family: Tahoma, Geneva, sans-serif">Добавить в корзину</a>
-
+                            <?php else : ?>
+                            <h4 style="color: red">Нет в наличии</h4>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="clearfix"> </div>

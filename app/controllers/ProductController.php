@@ -15,7 +15,7 @@ class ProductController extends AppController
 {
     public function viewAction(){
         $alias = $this->route['alias'];
-        $product = R::findOne('product', "alias = ? AND publish = '1'", [$alias]);
+        $product = R::findOne('product', "alias = ?", [$alias]);
         if(!$product){
             throw new \Exception('Страница не найдена', 404);
         }

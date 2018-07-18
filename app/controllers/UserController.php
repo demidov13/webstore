@@ -44,6 +44,9 @@ class UserController extends AppController
             }else{
                 $_SESSION['error'] = 'Логин/пароль введены неверно';
             }
+            if(User::isAdmin()){
+                redirect(ADMIN);
+            }
             redirect();
         }
         $this->setMeta('Вход');

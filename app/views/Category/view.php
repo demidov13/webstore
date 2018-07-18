@@ -22,7 +22,13 @@
                             <a href="product/<?=$product->alias;?>" class="mask"><img class="img-responsive zoom-img" src="<?=$product->img;?>" alt="" /></a>
                             <div class="product-bottom">
                                 <h3><?=$product->title;?></h3>
-                                <p>Купить сейчас</p>
+                                <p>
+                                    <?php if($product->publish == 0): ?>
+                                    <span style="color: red">Нет в наличии</span>
+                                    <?php else : ?>
+                                    Купить сейчас
+                                    <?php endif; ?>
+                                </p>
                                 <h4>
                                     <a data-id="<?=$product->id;?>" class="add-to-cart-link" href="cart/add?id=<?=$product->id;?>"><i></i></a> <span class=" item_price"><?=$product->price;?> грн.</span>
                                     <?php if($product->old_price): ?>
