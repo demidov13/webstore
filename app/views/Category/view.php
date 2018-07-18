@@ -30,7 +30,10 @@
                                     <?php endif; ?>
                                 </p>
                                 <h4>
-                                    <a data-id="<?=$product->id;?>" class="add-to-cart-link" href="cart/add?id=<?=$product->id;?>"><i></i></a> <span class=" item_price"><?=$product->price;?> грн.</span>
+                                    <?php if(!$product->publish == 0): ?>
+                                    <a data-id="<?=$product->id;?>" class="add-to-cart-link" href="cart/add?id=<?=$product->id;?>"><i></i></a>
+                                    <?php endif; ?>
+                                    <span class=" item_price"><?=$product->price;?> грн.</span>
                                     <?php if($product->old_price): ?>
                                         <small><del><?=$product->old_price;?> грн.</del></small>
                                     <?php endif; ?>
