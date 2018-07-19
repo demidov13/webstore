@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 19 2018 г., 02:09
+-- Время создания: Июл 20 2018 г., 01:09
 -- Версия сервера: 5.7.20-log
 -- Версия PHP: 7.2.0
 
@@ -147,18 +147,18 @@ CREATE TABLE `order` (
   `status` int(11) NOT NULL DEFAULT '0',
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_at` timestamp NULL DEFAULT NULL,
-  `note` text
+  `note` text,
+  `sum` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `order`
 --
 
-INSERT INTO `order` (`id`, `user_id`, `status`, `date`, `update_at`, `note`) VALUES
-(1, 8, 0, '2018-07-14 12:49:29', NULL, 'text'),
-(2, 12, 0, '2018-07-18 19:43:35', NULL, ''),
-(4, 12, 1, '2018-07-18 19:45:09', '2018-07-18 23:00:06', ''),
-(5, 12, 0, '2018-07-18 19:45:33', NULL, '');
+INSERT INTO `order` (`id`, `user_id`, `status`, `date`, `update_at`, `note`, `sum`) VALUES
+(7, 13, 0, '2018-07-19 19:23:31', NULL, '', 3895),
+(8, 12, 1, '2018-07-19 19:26:29', '2018-07-19 19:27:51', '', 560),
+(10, 12, 0, '2018-07-19 19:27:04', NULL, '', 1395);
 
 -- --------------------------------------------------------
 
@@ -180,14 +180,13 @@ CREATE TABLE `order_product` (
 --
 
 INSERT INTO `order_product` (`id`, `order_id`, `product_id`, `qty`, `title`, `price`) VALUES
-(1, 1, 16, 1, 'Фигурка Десятый доктор - Doctor Who', 465),
-(2, 2, 31, 1, 'Фигурка Уинстон - Overwatch', 465),
-(3, 2, 45, 1, 'Брелок Халк - Hulk China', 108.5),
-(4, 2, 23, 1, 'Фигурка Кот в сапогах - Shrek', 465),
-(7, 4, 38, 1, 'Кружка Чубакка - Star Wars', 320),
-(8, 4, 39, 1, 'Кружка Штормтрупер - Star Wars', 320),
-(9, 5, 28, 1, 'Фигурка Алиса в стране чудес - Disney', 465),
-(10, 5, 27, 5, 'Фигурка Русалочка - The Little Mermaid', 465);
+(14, 7, 1, 1, 'Фигурка Логан-Росомаха - X-Man', 465),
+(15, 7, 5, 5, 'Фигурка Гарри Поттер (Limited edition) ', 500),
+(16, 7, 27, 2, 'Фигурка Русалочка - The Little Mermaid', 465),
+(17, 8, 47, 2, 'Брелок Дементор - Harry Potter (U.S.A. Original)', 120),
+(18, 8, 38, 1, 'Кружка Чубакка - Star Wars (U.S.A. Original)', 320),
+(20, 10, 19, 1, 'Фигурка Хлоя - The secret life of pets', 465),
+(21, 10, 17, 2, 'Фигурка Клара Освальд - Doctor Who', 465);
 
 -- --------------------------------------------------------
 
@@ -369,7 +368,8 @@ INSERT INTO `user` (`id`, `login`, `password`, `email`, `name`, `address`, `role
 (4, 'man3', '$2y$10$c87U2moc1FZy7eyvhfZiw.QCZ0l2piIgfQYOyClETE6gujM7v0sdy', 'vit@gmail.com', 'Vitaliy', 'some where', 'user'),
 (8, 'testwebstore2', '$2y$10$PEn/PmzEdRy3i7qfa4mJduCOaKUfirBN7DWwfFMLwKbGa7t.upcQ.', 'goodkasper13@gmail.com', 'Vitaliy', 'some where', 'user'),
 (9, 'admin', '$2y$10$loXJcMYcLhe8Dp938F9neuuJzfUFcrIzvTB/OkBqz1zi6SaStGuhG', 'itdemidov@ukr.net', 'Виталий', 'Dnipro, Gusenko str. 4/6,', 'admin'),
-(12, 'testuser13', '$2y$10$V07sYYgNX9Xz.61K.kBzZe9R9EW04Ws30Oy6.ZBnfLN9acvPAwlna', 'testuser13@i.ua', 'Karl', 'Lama\'s World', 'user');
+(12, 'testuser13', '$2y$10$V07sYYgNX9Xz.61K.kBzZe9R9EW04Ws30Oy6.ZBnfLN9acvPAwlna', 'testuser13@i.ua', 'Karl', 'Lama\'s World', 'user'),
+(13, 'lamabro', '$2y$10$VxAgefoclV1bkyYdd0nQNu7Eks4X9fMmSzNqYUNf8x/pPhMsTrkWi', 'lamabro15@gmail.com', 'Настенька', 'Gusenko str. 4/6,', 'user');
 
 --
 -- Индексы сохранённых таблиц
@@ -463,13 +463,13 @@ ALTER TABLE `modification`
 -- AUTO_INCREMENT для таблицы `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `order_product`
 --
 ALTER TABLE `order_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT для таблицы `product`
@@ -487,7 +487,7 @@ ALTER TABLE `universe`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
