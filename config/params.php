@@ -15,4 +15,6 @@ return [
     'smtp_protocol' => 'ssl',
     'smtp_login' => 'testwebstore@ukr.net',
     'smtp_password' => 'webstore13',
+    'img_width' => 350,
+    'img_height' => 350,
 ];
