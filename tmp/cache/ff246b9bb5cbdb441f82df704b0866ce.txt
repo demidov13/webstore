@@ -1,0 +1,69 @@
+a:2:{s:4:"data";s:2085:"<li>
+    <a href="category/figurki">Фигурки</a>
+            <ul>
+            <li>
+    <a href="category/games-figurki">Игры</a>
+            <ul>
+            <li>
+    <a href="category/overwatch-figurki">Overwatch</a>
+    </li><li>
+    <a href="category/fallout-figurki">Fallout</a>
+    </li>        </ul>
+    </li><li>
+    <a href="category/cartoons-figurki">Мультфильмы</a>
+            <ul>
+            <li>
+    <a href="category/disney-figurki">Disney</a>
+    </li><li>
+    <a href="category/cartoon-shrek-figurki">Shrek</a>
+    </li><li>
+    <a href="category/The-secret-life-of-pets-figurki">The secret life of pets</a>
+    </li>        </ul>
+    </li><li>
+    <a href="category/serials-figurki">Сериалы</a>
+            <ul>
+            <li>
+    <a href="category/doctor-who-figurki">Doctor Who</a>
+    </li><li>
+    <a href="category/stranger-things-figurki">Stranger things</a>
+    </li><li>
+    <a href="category/the-x-files-figurki">The X-files</a>
+    </li>        </ul>
+    </li><li>
+    <a href="category/films-figurki">Фильмы</a>
+            <ul>
+            <li>
+    <a href="category/harry-potter-figurki">Harry Potter</a>
+    </li><li>
+    <a href="category/dc-figurki">DC</a>
+    </li><li>
+    <a href="category/marvel-figurki">Marvel</a>
+    </li>        </ul>
+    </li>        </ul>
+    </li><li>
+    <a href="category/brelki">Брелки</a>
+            <ul>
+            <li>
+    <a href="category/films-brelki">Фильмы</a>
+            <ul>
+            <li>
+    <a href="category/dc-brelki">DC</a>
+    </li><li>
+    <a href="category/harry-potter-brelki">Harry Potter</a>
+    </li><li>
+    <a href="category/marvel-brelki">Marvel</a>
+    </li>        </ul>
+    </li>        </ul>
+    </li><li>
+    <a href="category/krujki">Кружки</a>
+            <ul>
+            <li>
+    <a href="category/films-krujki">Фильмы</a>
+            <ul>
+            <li>
+    <a href="category/dc-krujki">DC</a>
+    </li><li>
+    <a href="category/star-wars-krujki">Star Wars</a>
+    </li>        </ul>
+    </li>        </ul>
+    </li>";s:8:"end_time";i:1532098312;}
