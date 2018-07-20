@@ -107,19 +107,8 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Меню</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li><a href="<?= ADMIN ?>/"><i class="fa fa-home"></i> <span>Home</span></a></li>
+                <li><a href="<?= ADMIN ?>/"><i class="fa fa-home"></i> <span>Главная</span></a></li>
                 <li><a href="<?= ADMIN ?>/order"><i class="fa fa-shopping-cart"></i> <span>Заказы</span></a></li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-navicon"></i> <span>Категории</span>
-                        <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="<?= ADMIN ?>/category">Список категорий</a></li>
-                        <li><a href="<?= ADMIN ?>/category/add">Добавить категорию</a></li>
-                    </ul>
-                </li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-cubes"></i> <span>Товары</span>
                         <span class="pull-right-container">
@@ -131,7 +120,6 @@
                         <li><a href="<?= ADMIN ?>/product/add">Добавить товар</a></li>
                     </ul>
                 </li>
-                <li><a href="<?= ADMIN ?>/cache"><i class="fa fa-database"></i> <span>Кэширование</span></a></li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-users"></i> <span>Пользователи</span>
                         <span class="pull-right-container">
@@ -143,6 +131,7 @@
                         <li><a href="<?= ADMIN ?>/user/add">Добавить пользователя</a></li>
                     </ul>
                 </li>
+                <li><a href="<?= ADMIN ?>/cache"><i class="fa fa-database"></i> <span>Кэширование</span></a></li>
             </ul>
         </section>
         <!-- /.sidebar -->

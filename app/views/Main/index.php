@@ -9,15 +9,17 @@
                         <p class="main-title-about">Виниловые фигурки любимых героев</p>
                     </div>
                     <?php foreach ($universes as $universe): ?>
-                        <div class="col-md-4 about-left">
-                            <figure class="effect-bubba">
-                                <img class="img-responsive" src="<?=$universe->img;?>" alt=""/>
-                                <figcaption>
-                                    <h2><?=$universe->title;?></h2>
-                                    <p><?=$universe->description;?></p>	
-                                </figcaption>			
-                            </figure>
-                        </div>
+                        <a href="category/<?=$universe->alias;?>">
+                            <div class="col-md-4 about-left">
+                                <figure class="effect-bubba">
+                                    <img class="img-responsive" src="<?=$universe->img;?>" alt=""/>
+                                    <figcaption>
+                                        <h2><?=$universe->title;?></h2>
+                                        <p><?=$universe->description;?></p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </a>
                     <?php endforeach;?>
                     <div class="clearfix"></div>
                 </div>

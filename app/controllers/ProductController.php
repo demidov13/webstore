@@ -24,7 +24,7 @@ class ProductController extends AppController
         $breadcrumbs = Breadcrumbs::getBreadcrumbs($product->category_id, $product->title);
         
         // связанные товары
-        $related = R::getAll("SELECT * FROM related_product JOIN product ON product.id = related_product.related_id WHERE related_product.product_id = ? LIMIT 3", [$product->id]);
+        $related = R::getAll("SELECT * FROM related_product JOIN product ON product.id = related_product.related_id WHERE related_product.product_id = ? AND product.publish = 1 LIMIT 3", [$product->id]);
 
         // запись в куки запрошенного товара
         $p_model = new Product();
@@ -36,14 +36,11 @@ class ProductController extends AppController
         if($r_viewed){
             $recentlyViewed = R::find('product', 'id IN (' . R::genSlots($r_viewed) . ') LIMIT 3', $r_viewed);
         }
-
-        // галерея
-        $gallery = R::findAll('gallery', 'product_id = ?', [$product->id]);
         
         // модификации
         $mods = R::findAll('modification', 'product_id = ?', [$product->id]);
 
         $this->setMeta($product->title, $product->description, $product->keywords);
-        $this->set(compact('product', 'related', 'gallery', 'recentlyViewed', 'breadcrumbs', 'mods'));
+        $this->set(compact('product', 'related', 'recentlyViewed', 'breadcrumbs', 'mods'));
     }
 }

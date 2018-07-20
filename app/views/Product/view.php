@@ -96,9 +96,17 @@
                                         <a href="product/<?=$item['alias'];?>" class="mask"><img class="img-responsive zoom-img" src="<?=$item['img'];?>" alt="" /></a>
                                         <div class="product-bottom">
                                             <h3><a href="product/<?=$item['alias'];?>"><?=$item['title'];?></a></h3>
-                                            <p>Купить сейчас</p>
+                                            <p>
+                                                <?php if($item->publish == 0): ?>
+                                                    <span style="color: red">Нет в наличии</span>
+                                                <?php else : ?>
+                                                    Купить сейчас
+                                                <?php endif; ?>
+                                            </p>
                                             <h4>
+                                                <?php if(!$item->publish == 0): ?>
                                                 <a class="item_add add-to-cart-link" href="cart/add?id=<?=$item['id'];?>" data-id="<?=$item['id'];?>"><i></i></a>
+                                                <?php endif; ?>
                                                 <span class="item_price"><?=$item['price'];?></span>
                                                 <?php if($item['old_price']): ?>
                                                 <small><del><?=$item['old_price'];?></del></small>

@@ -40,6 +40,14 @@ abstract class Model
         return R::store($tbl);
     }
 
+    public function update($table, $id){
+        $bean = R::load($table, $id);
+        foreach($this->attributes as $name => $value){
+            $bean->$name = $value;
+        }
+        return R::store($bean);
+    }
+
     public function validate($data){
         Validator::lang('ru');
         $v = new Validator($data);
