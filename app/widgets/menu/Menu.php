@@ -30,6 +30,7 @@ namespace app\widgets\menu;
 
 use iframe\Cache;
 use iframe\App;
+use RedUNIT\Base\Threeway;
 use \RedBeanPHP\R as R;
 
 class Menu
