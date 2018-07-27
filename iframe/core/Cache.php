@@ -17,6 +17,12 @@ class Cache
 {
     use TSingletone;
 
+    public function __construct() {
+        if(!is_dir(CACHE)) {
+            mkdir(CACHE, 0777, true);
+        }
+    }
+
     public function set($key, $data, $seconds = 3600){
         if($seconds){
             $content['data'] = $data;

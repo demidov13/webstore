@@ -11,6 +11,7 @@ use iframe\Cache;
 
 class CacheController extends AppController
 {
+
     public function indexAction(){
         $this->setMeta('Очистка кэша');
     }
